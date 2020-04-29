@@ -13,6 +13,9 @@ export const navBarStyles = () => {
       paddingRight: "15px !important",
     },
     menuItem: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
       marginRight: "10px",
     },
   }))();
