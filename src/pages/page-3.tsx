@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import SEO from "../components/seo"
-import { PageLayout } from "../layouts/PageLayout"
-import { App } from "./index"
+import SEO from "../components/seo";
+import { PageLayout } from "../layouts/PageLayout";
+import { App } from "../components/App";
 
 const ThirdPage = () => (
   <App>
@@ -14,6 +14,6 @@ const ThirdPage = () => (
       <Link to="/">Go back to the homepage</Link>
     </PageLayout>
   </App>
-)
+);
 
-export default ThirdPage
+export default ThirdPage;

@@ -12,11 +12,12 @@ export const navBarStyles = () => {
       minHeight: "70px",
       paddingRight: "15px !important",
     },
-    menuItem: {
+    navMenu: {
       display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      marginRight: "10px",
-    },
+      flexDirection: "row",
+      justifyContent: "flex-end",
+      backgroundColor: 'black',
+      color: 'white'
+    }
   }))();
 };
