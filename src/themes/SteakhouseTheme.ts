@@ -19,7 +19,7 @@ const SteakhouseTheme = (preference: PreferenceT) => {
       text: {
         secondary: "#ba2323",
       },
-      tonalOffset: 0.9,
+      tonalOffset: 0.2,
     },
     typography: {
       fontFamily: ["CheddarGothicRough"].join(","),

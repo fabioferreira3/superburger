@@ -14,12 +14,7 @@ export const NavMenu: React.FC<any> = () => {
     <NavMenuContext.Provider value={{ activeMenu, setActiveMenu }}>
       <div className={classes.navMenu}>
         {navMenuItemsData.map((menuItem, idx) => (
-          <NavMenuItem
-            key={idx}
-            title={menuItem.title}
-            slug={menuItem.slug}
-            items={menuItem.items}
-          />
+          <NavMenuItem key={idx} {...menuItem} />
         ))}
       </div>
     </NavMenuContext.Provider>
