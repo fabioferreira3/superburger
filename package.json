@@ -20,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
     "gatsby-plugin-styled-components": "^3.3.0",
+    "gatsby-plugin-svg-sprite": "^2.0.1",
     "gatsby-plugin-typescript": "^2.3.3",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.2.4",
@@ -53,11 +54,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -p 3000",
+    "develop": "gatsby develop -p 7000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "build-serve": "gatsby build && gatsby serve -p 5000",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

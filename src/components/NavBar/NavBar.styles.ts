@@ -7,17 +7,27 @@ export const navBarStyles = () => {
     },
     appBar: {
       boxShadow: "none",
-      background: "black",
-      opacity: "0.8",
-      minHeight: "70px",
       paddingRight: "15px !important",
     },
     navMenu: {
+      position: "absolute",
+      width: "100%",
+      height: "70px",
+      zIndex: 10,
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-end",
-      backgroundColor: 'black',
-      color: 'white'
-    }
+      color: "white",
+      backgroundColor: "transparent",
+    },
+    backgroundOverlay: {
+      position: "absolute",
+      height: "70px",
+      width: "100%",
+      top: "0px",
+      backgroundColor: "black",
+      opacity: "0.7",
+      zIndex: 5,
+    },
   }))();
 };

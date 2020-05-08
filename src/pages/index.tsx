@@ -34,8 +34,6 @@ const Section: React.FC = () => {
 };
 
 const IndexPage = () => {
-  // const isMobile = useMediaQuery("(max-width:768px)");
-  //  console.log(isMobile, "isMobile");
   return (
     <App>
       <PageLayout>

@@ -14,10 +14,14 @@ const SteakhouseTheme = (preference: PreferenceT) => {
     palette: {
       type: preference,
       primary: {
-        main: "#000",
+        main: "#2b2b2b",
+      },
+      secondary: {
+        main: "#FFA500",
       },
       text: {
-        secondary: "#ba2323",
+        primary: "#fff",
+        secondary: "#2b2b2b",
       },
       tonalOffset: 0.2,
     },

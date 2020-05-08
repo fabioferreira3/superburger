@@ -1,34 +1,43 @@
 import React from "react";
-import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import SendIcon from "@material-ui/icons/Send";
 import { navigate } from "gatsby";
+import { FoodBoxIcon } from "../components/CustomIcons/FoodBoxIcon";
+import { BreadIcon } from "../components/CustomIcons/BreadIcon";
+import { MealIcon } from "../components/CustomIcons/MealIcon";
+import { BurgerIcon } from "../components/CustomIcons/BurgerIcon";
 
 export default [
   {
-    title: "Item 1",
-    slug: "item-1",
+    title: "Home",
+    slug: "home",
+    onClickEvent: () => navigate("/"),
+  },
+  {
+    title: "About us",
+    slug: "about-us",
+    onClickEvent: () => navigate("/"),
+  },
+  {
+    title: "Menu",
+    slug: "menu",
     items: [
       {
-        title: "Eita",
-        icon: <AddCircleOutlineIcon />,
-        onClickEvent: () => navigate("/page-3/"),
+        title: "Starters",
+        icon: <BreadIcon />,
+        onClickEvent: () => {},
       },
-      { title: "eitaa", icon: <SendIcon />, onClickEvent: () => {} },
-      { title: "uia", onClickEvent: () => {} },
+      { title: "Fried Baskets", icon: <FoodBoxIcon />, onClickEvent: () => {} },
+      { title: "Meals", icon: <MealIcon />, onClickEvent: () => {} },
+      { title: "Sandwiches", icon: <BurgerIcon />, onClickEvent: () => {} },
     ],
   },
   {
-    title: "Item 2",
-    slug: "item-2",
-    items: [
-      { title: "Eita", icon: <AddCircleOutlineIcon />, onClickEvent: () => {} },
-      { title: "eitaa", icon: <SendIcon />, onClickEvent: () => {} },
-      { title: "uia", onClickEvent: () => {} },
-    ],
+    title: "Contact",
+    slug: "contact",
+    onClickEvent: () => navigate("/"),
   },
   {
-    title: "Item 3",
-    slug: "item-3",
+    title: "Reservations",
+    slug: "reservations",
     onClickEvent: () => navigate("/"),
   },
 ];
