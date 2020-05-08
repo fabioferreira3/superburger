@@ -1,9 +1,11 @@
 import React from "react";
 import { navigate } from "gatsby";
-import { FoodBoxIcon } from "../components/CustomIcons/FoodBoxIcon";
-import { BreadIcon } from "../components/CustomIcons/BreadIcon";
-import { MealIcon } from "../components/CustomIcons/MealIcon";
-import { BurgerIcon } from "../components/CustomIcons/BurgerIcon";
+import {
+  FoodBoxIcon,
+  BreadIcon,
+  BurgerIcon,
+  MealIcon,
+} from "../components/CustomIcons";
 
 export default [
   {

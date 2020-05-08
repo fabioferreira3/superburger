@@ -8,17 +8,20 @@ export const navBarStyles = () => {
     appBar: {
       boxShadow: "none",
       paddingRight: "15px !important",
+      height: "70px",
+      background: "none",
     },
     navMenu: {
       position: "absolute",
       width: "100%",
-      height: "70px",
+      height: "100%",
       zIndex: 10,
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-end",
       color: "white",
       backgroundColor: "transparent",
+      paddingRight: "20px",
     },
     backgroundOverlay: {
       position: "absolute",
