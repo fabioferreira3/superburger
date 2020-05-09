@@ -41,6 +41,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Fira Sans",
+              variants: ["300", "400", "500"],
+            },
+          ],
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-svg-sprite`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

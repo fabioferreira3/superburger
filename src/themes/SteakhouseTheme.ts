@@ -1,13 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import WebFont from "webfontloader";
 
 type PreferenceT = "dark" | "light";
-
-WebFont.load({
-  google: {
-    families: ["Fira Sans:300,400,700", "Assistant:300,400,700", "sans-serif"],
-  },
-});
 
 const SteakhouseTheme = (preference: PreferenceT) => {
   return createMuiTheme({
