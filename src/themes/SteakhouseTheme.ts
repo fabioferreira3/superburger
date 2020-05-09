@@ -3,11 +3,11 @@ import WebFont from "webfontloader";
 
 type PreferenceT = "dark" | "light";
 
-// WebFont.load({
-//   google: {
-//     families: ["Fira Sans:300,400,700", "Assistant:300,400,700", "sans-serif"],
-//   },
-// });
+WebFont.load({
+  google: {
+    families: ["Fira Sans:300,400,700", "Assistant:300,400,700", "sans-serif"],
+  },
+});
 
 const SteakhouseTheme = (preference: PreferenceT) => {
   return createMuiTheme({
@@ -32,9 +32,17 @@ const SteakhouseTheme = (preference: PreferenceT) => {
       fontWeightBold: 700,
       h1: {
         fontFamily: "OriginalBurger",
-        fontSize: 30,
+        fontSize: 50,
         fontWeight: "bold",
         textTransform: "uppercase",
+      },
+      h2: {
+        fontSize: 45,
+      },
+      body1: {
+        fontFamily: "Fira Sans",
+        fontWeight: 700,
+        fontSize: 20,
       },
     },
   });

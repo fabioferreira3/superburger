@@ -12,6 +12,7 @@ export const backgroundSectionStyles = () => {
       alignContent: "center",
       justifyContent: "center",
       padding: "70px 0 70px 0",
+      position: "relative",
     },
     backgroundOverlay: {
       position: "absolute",
