@@ -9,7 +9,6 @@ export const aboutStyles = () => {
     mainImage: { flexGrow: 3, maxWidth: "60%" },
     contentWrapper: {
       padding: "40px",
-      maxWidth: "40%",
       background: "black",
     },
   }))();

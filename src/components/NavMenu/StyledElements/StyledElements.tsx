@@ -3,7 +3,6 @@ import { Button, ListItemIcon, MenuItem } from "@material-ui/core";
 
 export const StyledMenuItem = withStyles(theme => ({
   root: {
-    minWidth: "150px",
     color: theme.palette.text.primary,
     "&:focus": {
       backgroundColor: theme.palette.primary.main,

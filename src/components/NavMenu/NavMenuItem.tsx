@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import { ListItemText } from "@material-ui/core";
 import Fade from "@material-ui/core/Fade";
 
@@ -26,34 +26,32 @@ export const NavMenuItem: React.FC<INavMenuItemProps> = props => {
   const { activeMenu, setActiveMenu } = useContext<any>(NavMenuContext);
   const classes = navMenuItemStyles();
 
-  return useMemo(() => {
-    const submenuIsOpen: boolean = activeMenu === slug;
+  const submenuIsOpen: boolean = activeMenu === slug;
 
-    return (
-      <div className={classes.menuItem} onMouseOver={() => setActiveMenu(slug)}>
-        <StyledButton
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            if (onClickEvent) {
-              onClickEvent();
-            }
-          }}
+  return (
+    <div className={classes.menuItem} onMouseOver={() => setActiveMenu(slug)}>
+      <StyledButton
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          if (onClickEvent) {
+            onClickEvent();
+          }
+        }}
+      >
+        {title}
+      </StyledButton>
+
+      <Fade in={submenuIsOpen}>
+        <div
+          className={classes.submenu}
+          onMouseLeave={() => setActiveMenu(null)}
         >
-          {title}
-        </StyledButton>
-
-        <Fade in={submenuIsOpen}>
-          <div
-            className={classes.submenu}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            {items &&
-              items.length &&
-              items.map((item, idx) => <NavMenuSubItem key={idx} {...item} />)}
-          </div>
-        </Fade>
-      </div>
-    );
-  }, [activeMenu]);
+          {items &&
+            items.length &&
+            items.map((item, idx) => <NavMenuSubItem key={idx} {...item} />)}
+        </div>
+      </Fade>
+    </div>
+  );
 };

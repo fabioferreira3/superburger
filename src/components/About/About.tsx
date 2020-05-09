@@ -1,7 +1,8 @@
 import React from "react";
+import { Grid, Typography } from "@material-ui/core";
 import { graphql, StaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import { Typography } from "@material-ui/core";
+
 import { aboutStyles } from "./About.styles";
 
 export const About: React.FC = () => {
@@ -21,12 +22,11 @@ export const About: React.FC = () => {
       `}
       render={data => {
         return (
-          <div className={classes.wrapper}>
-            <Img
-              fluid={data.desktop.childImageSharp.fluid}
-              className={classes.mainImage}
-            />
-            <div className={classes.contentWrapper}>
+          <Grid container>
+            <Grid item xs={12} md={8}>
+              <Img fluid={data.desktop.childImageSharp.fluid} />
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.contentWrapper}>
               <Typography variant="h2" color={"textPrimary"}>
                 Tradition and Quality built since 1976
               </Typography>
@@ -49,8 +49,8 @@ export const About: React.FC = () => {
                 style of cooking offer our customers unique tasting and
                 flavorful dishes that they come back to enjoy.
               </Typography>
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         );
       }}
     />

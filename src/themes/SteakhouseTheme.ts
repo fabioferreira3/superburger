@@ -10,7 +10,7 @@ const SteakhouseTheme = (preference: PreferenceT) => {
         main: "#2b2b2b",
       },
       secondary: {
-        main: "#FFA500",
+        main: "#ffd400",
       },
       text: {
         primary: "#fff",

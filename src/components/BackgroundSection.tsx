@@ -1,9 +1,22 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import styled from "styled-components";
+import BackgroundImage from "gatsby-background-image";
 
 import { backgroundSectionStyles } from "./BackgroundSection.styles";
 
-import BackgroundImage from "gatsby-background-image";
+const StyledBackgroundImage = styled(BackgroundImage)`
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 70px 0 70px 0;
+  position: relative;
+`;
 
 const BackgroundSection: React.FC<any> = props => {
   const classes = backgroundSectionStyles();
@@ -24,14 +37,10 @@ const BackgroundSection: React.FC<any> = props => {
       render={data => {
         const imageData = data.desktop.childImageSharp.fluid;
         return (
-          <BackgroundImage
-            Tag="section"
-            className={classes.backgroundSquare}
-            fluid={imageData}
-          >
-            <div className={classes.backgroundOverlay}/>
+          <StyledBackgroundImage Tag="section" fluid={imageData}>
+            <div className={classes.backgroundOverlay} />
             {props.children}
-          </BackgroundImage>
+          </StyledBackgroundImage>
         );
       }}
     />

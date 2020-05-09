@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { Grid, Hidden } from "@material-ui/core";
 
 import { NavMenuItem } from "./NavMenuItem";
 import { navBarStyles } from "../NavBar/NavBar.styles";
@@ -12,11 +13,13 @@ export const NavMenu: React.FC<any> = () => {
 
   return (
     <NavMenuContext.Provider value={{ activeMenu, setActiveMenu }}>
-      <div className={classes.navMenu}>
-        {navMenuItemsData.map((menuItem, idx) => (
-          <NavMenuItem key={idx} {...menuItem} />
-        ))}
-      </div>
+      <Hidden xsDown>
+        <Grid justify={"flex-end"} container className={classes.navMenu}>
+          {navMenuItemsData.map((menuItem, idx) => (
+            <NavMenuItem key={idx} {...menuItem} />
+          ))}
+        </Grid>
+      </Hidden>
     </NavMenuContext.Provider>
   );
 };

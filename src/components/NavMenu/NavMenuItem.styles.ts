@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const navMenuItemStyles = () => {
-  return makeStyles(() => ({
+  return makeStyles(theme => ({
     submenu: {
       position: "absolute",
       top: "70px",
@@ -13,7 +13,7 @@ export const navMenuItemStyles = () => {
       flexDirection: "row",
       justifyContent: "flex-end",
       alignItems: "center",
-      minWidth: "150px",
+      minWidth: "140px",
     },
   }))();
 };
