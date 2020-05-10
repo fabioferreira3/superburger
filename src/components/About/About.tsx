@@ -22,9 +22,12 @@ export const About: React.FC = () => {
       `}
       render={data => {
         return (
-          <Grid container>
+          <Grid container className={classes.wrapper}>
             <Grid item xs={12} md={8}>
-              <Img fluid={data.desktop.childImageSharp.fluid} />
+              <Img
+                fluid={data.desktop.childImageSharp.fluid}
+                className={classes.mainImage}
+              />
             </Grid>
             <Grid item xs={12} md={4} className={classes.contentWrapper}>
               <Typography variant="h2" color={"textPrimary"}>

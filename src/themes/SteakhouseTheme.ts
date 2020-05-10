@@ -7,7 +7,7 @@ const SteakhouseTheme = (preference: PreferenceT) => {
     palette: {
       type: preference,
       primary: {
-        main: "#2b2b2b",
+        main: "#1e1e1e",
       },
       secondary: {
         main: "#ffd400",
@@ -19,23 +19,27 @@ const SteakhouseTheme = (preference: PreferenceT) => {
       tonalOffset: 0.2,
     },
     typography: {
-      fontFamily: ["CheddarGothicRough"].join(","),
+      fontFamily: "CheddarGothicRough",
       fontWeightLight: 300,
       fontWeightMedium: 400,
       fontWeightBold: 700,
       h1: {
-        fontFamily: "OriginalBurger",
+        letterSpacing: "1px",
         fontSize: 50,
         fontWeight: "bold",
         textTransform: "uppercase",
       },
       h2: {
         fontSize: 45,
+        letterSpacing: "1px",
       },
       body1: {
         fontFamily: "Fira Sans",
         fontWeight: 700,
         fontSize: 20,
+      },
+      button: {
+        letterSpacing: "1px",
       },
     },
   });

@@ -6,10 +6,15 @@ export const aboutStyles = () => {
       display: "flex",
       background: theme.palette.secondary.main,
     },
-    mainImage: { flexGrow: 3, maxWidth: "60%" },
+    mainImage: {
+      height: "100%",
+      [theme.breakpoints.up("md")]: {
+        maxHeight: "80%",
+      },
+    },
     contentWrapper: {
       padding: "40px",
-      background: "black",
+      background: theme.palette.primary.main,
     },
   }))();
 };

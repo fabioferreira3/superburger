@@ -13,6 +13,7 @@ export const StyledButton = withStyles(theme => ({
     width: "150px",
     padding: "10px",
     marginRight: "10px",
+    letterSpacing: "1px",
     "&:hover": {
       color: theme.palette.text.primary,
     },
@@ -22,6 +23,9 @@ export const StyledButton = withStyles(theme => ({
   },
   primary: {
     background: theme.palette.primary.main,
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "black",
   },
   secondary: {
     background: theme.palette.secondary.main,

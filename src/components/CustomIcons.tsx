@@ -11,7 +11,7 @@ import meal from "../images/icons/Meal.svg";
 
 const CustomIcon: React.FC<any> = props => (
   <SvgIcon {...props}>
-    <use xlinkHref={`#${props.svg.id}`} />
+    <use xlinkHref={`#${props.svg.id}`} {...props} />
   </SvgIcon>
 );
 
