@@ -25,12 +25,12 @@ const SteakhouseTheme = (preference: PreferenceT) => {
       fontWeightBold: 700,
       h1: {
         letterSpacing: "1px",
-        fontSize: 50,
+        fontSize: 55,
         fontWeight: "bold",
         textTransform: "uppercase",
       },
       h2: {
-        fontSize: 45,
+        fontSize: 50,
         letterSpacing: "1px",
       },
       body1: {

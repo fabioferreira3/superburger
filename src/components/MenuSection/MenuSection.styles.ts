@@ -4,10 +4,16 @@ export const menuSectionStyles = () => {
   return makeStyles(theme => ({
     wrapper: {
       background: theme.palette.primary.main,
-      padding: "20px",
+      padding: 40,
     },
     title: {
-      textAlign: "center",
+      color: "white",
+    },
+    menuCategoryItemBar: {
+      width: "100%",
+      height: 3,
+      background: theme.palette.secondary.main,
+      marginTop: 15,
     },
   }))();
 };

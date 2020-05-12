@@ -8,18 +8,20 @@ export const statsSectionStyles = () => {
     },
     wrapper: {
       background: theme.palette.secondary.main,
+      padding: 20,
     },
     statItem: {
-      padding: 20,
-      display: "flex",
-      flexDirection: "column",
       position: "relative",
       height: 250,
+      padding: 10,
     },
     statItemIcon: {
+      display: "flex",
+      borderRadius: 60,
       position: "absolute",
+      padding: 15,
       top: 0,
-      left: 10,
+      left: 0,
       zIndex: 1,
     },
     statItemNumber: {
