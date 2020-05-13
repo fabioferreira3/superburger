@@ -23,6 +23,9 @@ export const menuSectionStyles = () => {
       marginBottom: 70,
     },
     menuCategoryWrapper: {
+      cursor: "pointer",
+      flexGrow: 1,
+      marginTop: 25,
       flexWrap: "nowrap",
       borderBottom: "3px solid #777777",
       paddingBottom: 15,
@@ -36,34 +39,37 @@ export const menuSectionStyles = () => {
     },
     menuCategoryItem: {
       cursor: "pointer",
-      [theme.breakpoints.down("sm")]: {
-        marginTop: 25,
-      },
+      flexGrow: 1,
+      marginTop: 25,
     },
     menuCategoryTitle: {
-      display: "block",
       color: "#777777",
-      marginLeft: 20,
       padding: 10,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 15,
-        marginLeft: 10,
-      },
+      borderRadius: 10,
+      textAlign: "center",
       transition: "color 0.4s, background 0.4s",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: 30,
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: 18,
+      },
     },
     menuCategoryTitleActive: {
       color: theme.palette.primary.main,
       background: theme.palette.secondary.main,
-      borderRadius: 10,
+    },
+    menuCategoryIconWrapper: {
+      textAlign: "center",
     },
     menuCategoryIcon: {
-      fontSize: 80,
+      fontSize: 100,
       opacity: "0.7",
       [theme.breakpoints.down("md")]: {
         fontSize: 55,
       },
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 45,
+      [theme.breakpoints.down("xs")]: {
+        fontSize: 80,
       },
       transition: "opacity 0.4s",
     },

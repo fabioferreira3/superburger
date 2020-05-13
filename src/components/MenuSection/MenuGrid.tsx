@@ -2,16 +2,9 @@ import React, { useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import Img from "gatsby-image";
 import classnames from "classnames";
-import * as categoriesData from "./categoriesData";
+import { categories } from "./categoriesData";
 
 import { menuSectionStyles } from "./MenuSection.styles";
-
-import {
-  BurgerMealIcon,
-  DoughnutIcon,
-  FriesIcon,
-  HamburgerIcon,
-} from "../CustomIcons";
 import { getMenuItemsImagesData } from "./MenuImages";
 
 export const MenuCategoryNavItem: React.FC<any> = props => {
@@ -22,27 +15,27 @@ export const MenuCategoryNavItem: React.FC<any> = props => {
 
   return (
     <Grid
+      container
       item
-      xs={6}
+      xs={12}
       sm={3}
-      className={classes.menuCategoryItem}
+      alignItems={"center"}
+      justify={"space-evenly"}
+      className={classnames(
+        classes.menuCategoryWrapper,
+        activeCategory === slug ? classes.menuCategoryWrapperActive : ""
+      )}
       onClick={() => setActiveCategory(slug)}
     >
-      <Grid
-        container
-        justify={"center"}
-        alignItems={"center"}
-        className={classnames(
-          classes.menuCategoryWrapper,
-          activeCategory === slug ? classes.menuCategoryWrapperActive : ""
-        )}
-      >
+      <Grid item xs={6} className={classes.menuCategoryIconWrapper}>
         <Icon
           className={classnames(
             classes.menuCategoryIcon,
             isActive ? classes.menuCategoryIconActive : ""
           )}
         />
+      </Grid>
+      <Grid item xs>
         <Typography
           variant={"body1"}
           className={classnames(
@@ -81,44 +74,25 @@ export const MenuContent: React.FC<any> = props => {
 
 export const MenuGrid: React.FC = () => {
   const classes = menuSectionStyles();
-  const imagesData = getMenuItemsImagesData();
+  const menuItemsImages = getMenuItemsImagesData();
   const [activeCategory, setActiveCategory] = useState("meals");
-  const { categories } = categoriesData;
 
   return (
     <Grid container className={classes.menuGridWrapper}>
       <Grid container className={classes.menuGridNav}>
-        <MenuCategoryNavItem
-          icon={FriesIcon}
-          title={"Starters"}
-          slug={categories.STARTERS}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <MenuCategoryNavItem
-          icon={BurgerMealIcon}
-          title={"Meals"}
-          slug={categories.MEALS}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <MenuCategoryNavItem
-          icon={HamburgerIcon}
-          title={"Sandwiches"}
-          slug={categories.SANDWICHES}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <MenuCategoryNavItem
-          icon={DoughnutIcon}
-          title={"Deserts"}
-          slug={categories.DESSERTS}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
+        {categories.map((category: any) => (
+          <MenuCategoryNavItem
+            key={category.slug}
+            icon={category.icon}
+            title={category.title}
+            slug={category.slug}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
+        ))}
       </Grid>
       <Grid container className={classes.menuGridContent}>
-        <MenuContent imagesMapping={imagesData} />
+        <MenuContent imagesMapping={menuItemsImages} />
       </Grid>
     </Grid>
   );
