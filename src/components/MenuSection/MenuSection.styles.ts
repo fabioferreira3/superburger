@@ -18,6 +18,9 @@ export const menuSectionStyles = () => {
       [theme.breakpoints.down("sm")]: {
         marginTop: 25,
       },
+      [theme.breakpoints.down("xs")]: {
+        height: "100%",
+      },
     },
     menuGridNav: {
       marginBottom: 70,
@@ -32,7 +35,7 @@ export const menuSectionStyles = () => {
       [theme.breakpoints.down("sm")]: {
         paddingBottom: 25,
       },
-      transition: "border-bottom 0.4s",
+      transition: "border-bottom 0.3s",
     },
     menuCategoryWrapperActive: {
       borderBottom: `3px solid ${theme.palette.secondary.main}`,
@@ -47,7 +50,7 @@ export const menuSectionStyles = () => {
       padding: 10,
       borderRadius: 10,
       textAlign: "center",
-      transition: "color 0.4s, background 0.4s",
+      transition: "color 0.3s, background 0.3s",
       [theme.breakpoints.down("xs")]: {
         fontSize: 30,
       },
@@ -71,11 +74,17 @@ export const menuSectionStyles = () => {
       [theme.breakpoints.down("xs")]: {
         fontSize: 80,
       },
-      transition: "opacity 0.4s",
+      transition: "opacity 0.3s",
     },
     menuCategoryIconActive: {
       opacity: 1,
     },
-    menuGridContent: {},
+    menuGridContent: {
+      height: 600,
+      [theme.breakpoints.down("xs")]: {
+        display: "block",
+        height: "100%",
+      },
+    },
   }))();
 };

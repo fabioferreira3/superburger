@@ -7,6 +7,7 @@ export const navMenuItemStyles = () => {
       top: "70px",
       backgroundColor: "black",
       borderRadius: "0px 0px 20px 20px",
+      overflow: "auto",
     },
     menuItem: {
       display: "flex",

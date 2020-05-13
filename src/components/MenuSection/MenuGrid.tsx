@@ -1,81 +1,20 @@
-import React, { useState } from "react";
-import { Grid, Typography } from "@material-ui/core";
-import Img from "gatsby-image";
-import classnames from "classnames";
+import React, { useEffect, useState } from "react";
+import { Grid } from "@material-ui/core";
 import { categories } from "./categoriesData";
 
 import { menuSectionStyles } from "./MenuSection.styles";
 import { getMenuItemsImagesData } from "./MenuImages";
-
-export const MenuCategoryNavItem: React.FC<any> = props => {
-  const { icon: Icon, title, slug, activeCategory, setActiveCategory } = props;
-  const classes = menuSectionStyles();
-
-  const isActive = activeCategory === slug;
-
-  return (
-    <Grid
-      container
-      item
-      xs={12}
-      sm={3}
-      alignItems={"center"}
-      justify={"space-evenly"}
-      className={classnames(
-        classes.menuCategoryWrapper,
-        activeCategory === slug ? classes.menuCategoryWrapperActive : ""
-      )}
-      onClick={() => setActiveCategory(slug)}
-    >
-      <Grid item xs={6} className={classes.menuCategoryIconWrapper}>
-        <Icon
-          className={classnames(
-            classes.menuCategoryIcon,
-            isActive ? classes.menuCategoryIconActive : ""
-          )}
-        />
-      </Grid>
-      <Grid item xs>
-        <Typography
-          variant={"body1"}
-          className={classnames(
-            classes.menuCategoryTitle,
-            isActive ? classes.menuCategoryTitleActive : ""
-          )}
-        >
-          {title}
-        </Typography>
-      </Grid>
-    </Grid>
-  );
-};
-
-const MenuCategory: React.FC = () => {
-  return (
-    <>
-      {/*<Grid item sm={6}>*/}
-      {/*  <Img fluid={imagesData["burgerItem3"].childImageSharp.fluid} />*/}
-      {/*</Grid>*/}
-      {/*<Grid item sm={6}>*/}
-      {/*  2*/}
-      {/*</Grid>*/}
-    </>
-  );
-};
-
-export const MenuContent: React.FC<any> = props => {
-  const { imagesMapping } = props;
-  return (
-    <>
-      <MenuCategory />
-    </>
-  );
-};
+import { MenuContent } from "./MenuContent";
+import { MenuCategoryNavItem } from "./MenuCategoryNavItem";
 
 export const MenuGrid: React.FC = () => {
   const classes = menuSectionStyles();
   const menuItemsImages = getMenuItemsImagesData();
   const [activeCategory, setActiveCategory] = useState("meals");
+
+  useEffect(() => {
+    console.log("RENDERED: Menu Grid");
+  });
 
   return (
     <Grid container className={classes.menuGridWrapper}>
@@ -92,7 +31,10 @@ export const MenuGrid: React.FC = () => {
         ))}
       </Grid>
       <Grid container className={classes.menuGridContent}>
-        <MenuContent imagesMapping={menuItemsImages} />
+        <MenuContent
+          imagesMapping={menuItemsImages}
+          category={activeCategory}
+        />
       </Grid>
     </Grid>
   );

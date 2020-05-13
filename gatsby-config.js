@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Steakhouse 1`,
-    description: `Steakhouse React with Gatsby`,
+    title: `Superburger`,
+    description: `Superburger template React with Gatsby`,
     author: `@fabioferreira_web`,
   },
   plugins: [

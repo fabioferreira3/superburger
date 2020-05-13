@@ -1,7 +1,7 @@
 import React from "react";
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-import * as baguette from "../images/icons/flat3/Baguette.svg";
+import baguette from "../images/icons/flat3/Baguette.svg";
 import beef from "../images/icons/flat2/Beef.svg";
 import bread from "../images/icons/plain1/Bread.svg";
 import burger from "../images/icons/plain1/Burger.svg";
