@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-export const MenuItemsImagesData = () => {
+export const getMenuItemsImagesData = () => {
   const squareImage = graphql`
     fragment squareImage on File {
       childImageSharp {

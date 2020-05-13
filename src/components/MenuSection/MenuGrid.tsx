@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import Img from "gatsby-image";
 import classnames from "classnames";
+import * as categoriesData from "./categoriesData";
 
 import { menuSectionStyles } from "./MenuSection.styles";
 
@@ -11,7 +12,7 @@ import {
   FriesIcon,
   HamburgerIcon,
 } from "../CustomIcons";
-import { MenuItemsImagesData } from "./MenuImages";
+import { getMenuItemsImagesData } from "./MenuImages";
 
 export const MenuCategoryNavItem: React.FC<any> = props => {
   const { icon: Icon, title, slug, activeCategory, setActiveCategory } = props;
@@ -57,7 +58,6 @@ export const MenuCategoryNavItem: React.FC<any> = props => {
 };
 
 const MenuCategory: React.FC = () => {
-
   return (
     <>
       {/*<Grid item sm={6}>*/}
@@ -67,28 +67,23 @@ const MenuCategory: React.FC = () => {
       {/*  2*/}
       {/*</Grid>*/}
     </>
-  )
-}
+  );
+};
 
-export const MenuContent: React.FC = () => {
-  const imagesData = MenuItemsImagesData();
-  console.log(imagesData);
+export const MenuContent: React.FC<any> = props => {
+  const { imagesMapping } = props;
   return (
     <>
-      <MenuCategory/>
+      <MenuCategory />
     </>
   );
 };
 
 export const MenuGrid: React.FC = () => {
   const classes = menuSectionStyles();
+  const imagesData = getMenuItemsImagesData();
   const [activeCategory, setActiveCategory] = useState("meals");
-  const categories = {
-    STARTERS: "starters",
-    MEALS: "meals",
-    SANDWICHES: "sandwiches",
-    DESERTS: "deserts",
-  };
+  const { categories } = categoriesData;
 
   return (
     <Grid container className={classes.menuGridWrapper}>
@@ -117,13 +112,13 @@ export const MenuGrid: React.FC = () => {
         <MenuCategoryNavItem
           icon={DoughnutIcon}
           title={"Deserts"}
-          slug={categories.DESERTS}
+          slug={categories.DESSERTS}
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
         />
       </Grid>
       <Grid container className={classes.menuGridContent}>
-        <MenuContent />
+        <MenuContent imagesMapping={imagesData} />
       </Grid>
     </Grid>
   );
