@@ -17,7 +17,7 @@ export const statsSectionStyles = () => {
     },
     statItemIcon: {
       display: "flex",
-      borderRadius: 60,
+      borderRadius: 70,
       position: "absolute",
       padding: 15,
       top: 0,
@@ -25,16 +25,21 @@ export const statsSectionStyles = () => {
       zIndex: 1,
     },
     statItemNumber: {
+      color: theme.typography.h2.color,
       fontFamily: theme.typography.fontFamily,
-      fontSize: 80,
+      fontSize: 70,
       paddingLeft: 10,
       position: "absolute",
-      top: 30,
+      top: 0,
       zIndex: 2,
     },
     statItemContent: {
       position: "absolute",
-      top: 150,
+      padding: 10,
+      top: 110,
+      [theme.breakpoints.down("xs")]: {
+        padding: 0,
+      },
     },
   }))();
 };

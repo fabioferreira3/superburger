@@ -25,7 +25,7 @@ const BackgroundSection: React.FC<any> = props => {
     <StaticQuery
       query={graphql`
         query {
-          desktop: file(relativePath: { eq: "burger1.jpg" }) {
+          desktop: file(relativePath: { eq: "main-banner.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 3000) {
                 ...GatsbyImageSharpFluid

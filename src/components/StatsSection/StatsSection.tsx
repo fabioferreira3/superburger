@@ -2,20 +2,19 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 import { statsSectionStyles } from "./StatsSection.styles";
-import { BaguetteIcon, BurgerIcon, ChefIcon, MeatIcon } from "../CustomIcons";
+import {
+  BaguetteIcon,
+  ChefHatIcon,
+  MeatIcon,
+  SoftdrinkIcon,
+} from "../CustomIcons";
 
 interface StatProps {
   statNumber: string;
   icon: any;
-  color: string;
 }
 
-const Stat: React.FC<StatProps> = ({
-  statNumber,
-  icon: Icon,
-  color,
-  children,
-}) => {
+const Stat: React.FC<StatProps> = ({ statNumber, icon: Icon, children }) => {
   const classes = statsSectionStyles();
   return (
     <Grid
@@ -25,8 +24,8 @@ const Stat: React.FC<StatProps> = ({
       alignItems={"center"}
       className={classes.statItem}
     >
-      <div className={classes.statItemIcon} style={{ background: color }}>
-        <Icon style={{ fontSize: 70 }} />
+      <div className={classes.statItemIcon} style={{ background: "#fff" }}>
+        <Icon style={{ fontSize: 50 }} />
       </div>
       <span className={classes.statItemNumber}>{statNumber}</span>
       <div className={classes.statItemContent}>
@@ -46,22 +45,22 @@ export const StatsSection: React.FC = () => {
       <Grid item xs={12} md={10} className={classes.wrapper}>
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"24H"} icon={BaguetteIcon} color={"#fff"}>
+            <Stat statNumber={"24H"} icon={BaguetteIcon}>
               Every day, suppliers supply us with fresh products
             </Stat>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"98Kg"} icon={MeatIcon} color={"#e80606"}>
+            <Stat statNumber={"98Kg"} icon={MeatIcon}>
               Our guests eat fresh meat every month
             </Stat>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"162"} icon={ChefIcon} color={"#42dd23"}>
-              Tradition has been handed down for 162 years
+            <Stat statNumber={"3542"} icon={SoftdrinkIcon}>
+              Beverages served to our guests every month
             </Stat>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"2"} icon={ChefIcon} color={"#1b97f7"}>
+            <Stat statNumber={"2"} icon={ChefHatIcon}>
               The current owners are the second generation
             </Stat>
           </Grid>

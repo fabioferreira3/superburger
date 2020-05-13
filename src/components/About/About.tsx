@@ -11,7 +11,7 @@ export const About: React.FC = () => {
     <StaticQuery
       query={graphql`
         query {
-          desktop: file(relativePath: { eq: "burger2.jpg" }) {
+          desktop: file(relativePath: { eq: "about-banner.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 3000) {
                 ...GatsbyImageSharpFluid
