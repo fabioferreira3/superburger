@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Grid } from "@material-ui/core";
 import { categories } from "./categoriesData";
 
@@ -16,19 +16,23 @@ export const MenuGrid: React.FC = () => {
     console.log("RENDERED: Menu Grid");
   });
 
+  const categoriesComponents = useMemo(() => {
+    return categories.map((category: any) => (
+      <MenuCategoryNavItem
+        key={category.slug}
+        icon={category.icon}
+        title={category.title}
+        slug={category.slug}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+      />
+    ));
+  }, [activeCategory]);
+
   return (
     <Grid container className={classes.menuGridWrapper}>
       <Grid container className={classes.menuGridNav}>
-        {categories.map((category: any) => (
-          <MenuCategoryNavItem
-            key={category.slug}
-            icon={category.icon}
-            title={category.title}
-            slug={category.slug}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-          />
-        ))}
+        {categoriesComponents}
       </Grid>
       <Grid container className={classes.menuGridContent}>
         <MenuContent

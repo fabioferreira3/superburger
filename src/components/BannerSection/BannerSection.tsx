@@ -10,10 +10,10 @@ import { Button } from "@material-ui/core";
 export const StyledButton = withStyles(theme => ({
   root: {
     fontSize: "1.5em",
-    width: "150px",
-    padding: "10px",
-    marginRight: "10px",
-    letterSpacing: "1px",
+    width: 150,
+    padding: 10,
+    marginRight: 10,
+    letterSpacing: 1,
     "&:hover": {
       color: theme.palette.text.primary,
     },
@@ -23,7 +23,7 @@ export const StyledButton = withStyles(theme => ({
   },
   primary: {
     background: theme.palette.primary.main,
-    borderWidth: "1px",
+    borderWidth: 1,
     borderStyle: "solid",
     borderColor: "black",
   },

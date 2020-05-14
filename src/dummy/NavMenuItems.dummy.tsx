@@ -27,9 +27,9 @@ export default [
         icon: <BreadIcon />,
         onClickEvent: () => {},
       },
-      { title: "Fried Baskets", icon: <FoodBoxIcon />, onClickEvent: () => {} },
       { title: "Meals", icon: <MealIcon />, onClickEvent: () => {} },
       { title: "Sandwiches", icon: <BurgerIcon />, onClickEvent: () => {} },
+      { title: "Desserts", icon: <FoodBoxIcon />, onClickEvent: () => {} },
     ],
   },
   {

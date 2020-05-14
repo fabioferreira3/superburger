@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 import { statsSectionStyles } from "./StatsSection.styles";
@@ -14,25 +14,36 @@ interface StatProps {
   icon: any;
 }
 
-const Stat: React.FC<StatProps> = ({ statNumber, icon: Icon, children }) => {
+const StatItem: React.FC<StatProps> = ({
+  statNumber,
+  icon: Icon,
+  children,
+}) => {
   const classes = statsSectionStyles();
+
+  useEffect(() => {
+    console.log("RENDERED: Stat item");
+  });
+
   return (
     <Grid
       container
       direction={"column"}
-      justify={"center"}
+      justify={"space-around"}
       alignItems={"center"}
       className={classes.statItem}
     >
-      <div className={classes.statItemIcon} style={{ background: "#fff" }}>
-        <Icon style={{ fontSize: 50 }} />
-      </div>
-      <span className={classes.statItemNumber}>{statNumber}</span>
-      <div className={classes.statItemContent}>
-        <Typography variant={"body1"} component={"span"}>
-          {children}
-        </Typography>
-      </div>
+      <Grid container alignItems={"center"} justify={"space-around"}>
+        <Icon className={classes.statItemIcon} />
+        <span className={classes.statItemNumber}>{statNumber}</span>
+      </Grid>
+      <Typography
+        variant={"body1"}
+        component={"div"}
+        className={classes.statItemContent}
+      >
+        {children}
+      </Typography>
     </Grid>
   );
 };
@@ -40,29 +51,33 @@ const Stat: React.FC<StatProps> = ({ statNumber, icon: Icon, children }) => {
 export const StatsSection: React.FC = () => {
   const classes = statsSectionStyles();
 
+  useEffect(() => {
+    console.log("RENDERED: Stats section");
+  });
+
   return (
     <Grid container className={classes.mainWrapper}>
       <Grid item xs={12} md={10} className={classes.wrapper}>
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"24H"} icon={BaguetteIcon}>
-              Every day, suppliers supply us with fresh products
-            </Stat>
+            <StatItem statNumber={"24H"} icon={BaguetteIcon}>
+              Every day, supplied with fresh products
+            </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"98Kg"} icon={MeatIcon}>
+            <StatItem statNumber={"98Kg"} icon={MeatIcon}>
               Our guests eat fresh meat every month
-            </Stat>
+            </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"3542"} icon={SoftdrinkIcon}>
+            <StatItem statNumber={"3542"} icon={SoftdrinkIcon}>
               Beverages served to our guests every month
-            </Stat>
+            </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Stat statNumber={"2"} icon={ChefHatIcon}>
-              The current owners are the second generation
-            </Stat>
+            <StatItem statNumber={"2"} icon={ChefHatIcon}>
+              Current owners are the second generation
+            </StatItem>
           </Grid>
         </Grid>
       </Grid>

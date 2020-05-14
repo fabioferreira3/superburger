@@ -4,9 +4,6 @@ import { Button, ListItemIcon, MenuItem } from "@material-ui/core";
 export const StyledMenuItem = withStyles(theme => ({
   root: {
     color: theme.palette.text.primary,
-    "&:focus": {
-      backgroundColor: theme.palette.primary.main,
-    },
     "&:hover": {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.text.secondary,

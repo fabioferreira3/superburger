@@ -1,6 +1,6 @@
 import React from "react";
 
-import SEO from "../components/seo";
+import Seo from "../components/Seo";
 import { App } from "../components/App";
 import { PageLayout } from "../layouts/PageLayout";
 import { BannerSection } from "../components/BannerSection/BannerSection";
@@ -9,16 +9,18 @@ import { StatsSection } from "../components/StatsSection/StatsSection";
 import { MenuSection } from "../components/MenuSection/MenuSection";
 
 import "../components/layout.css";
+import { PromoSection } from "../components/PromoSection/PromoSection"
 
 const IndexPage = () => {
   return (
     <App>
       <PageLayout>
-        <SEO title="Home" />
+        <Seo title="Home" />
         <BannerSection />
         <About />
         <StatsSection />
         <MenuSection />
+        <PromoSection />
       </PageLayout>
     </App>
   );

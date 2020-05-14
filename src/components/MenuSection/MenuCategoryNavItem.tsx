@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react"
 import { menuSectionStyles } from "./MenuSection.styles";
 import { Grid, Typography } from "@material-ui/core";
 import classnames from "classnames";
@@ -8,6 +8,10 @@ export const MenuCategoryNavItem: React.FC<any> = props => {
   const classes = menuSectionStyles();
 
   const isActive = activeCategory === slug;
+
+  useEffect(() => {
+    console.log('RENDERED: Menu Category NavItem')
+  })
 
   return (
     <Grid

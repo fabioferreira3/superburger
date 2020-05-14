@@ -2,7 +2,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 type PreferenceT = "dark" | "light";
 
-const SteakhouseTheme = (preference: PreferenceT) => {
+const SuperburgerTheme = (preference: PreferenceT) => {
   return createMuiTheme({
     palette: {
       type: preference,
@@ -10,7 +10,7 @@ const SteakhouseTheme = (preference: PreferenceT) => {
         main: "#1e1e1e",
       },
       secondary: {
-        main: "#ffd400",
+        main: "#ffc700",
       },
       text: {
         primary: "#fff",
@@ -45,4 +45,4 @@ const SteakhouseTheme = (preference: PreferenceT) => {
   });
 };
 
-export default SteakhouseTheme;
+export default SuperburgerTheme;

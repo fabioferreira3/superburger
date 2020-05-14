@@ -10,6 +10,8 @@ export const menuCategoryStyles = () => {
     },
     subWrapper: {
       width: "100%",
+      maxHeight: "100%",
+      overflow: "auto",
       background: theme.palette.primary.main,
     },
     itemImageLabel: {
@@ -21,7 +23,7 @@ export const menuCategoryStyles = () => {
       fontSize: 40,
       color: "#fff",
       background: "#0a0a0a",
-      opacity: 0.85
+      opacity: 0.85,
     },
     itemWrapper: {
       padding: 20,

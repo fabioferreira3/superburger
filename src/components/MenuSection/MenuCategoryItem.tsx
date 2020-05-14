@@ -1,9 +1,11 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { Grid, Typography } from "@material-ui/core";
+
 import { menuCategoryStyles } from "./MenuCategory.styles";
 
 export const MenuCategoryItem: React.FC<any> = props => {
-  const { title, description, price, onClickCallback } = props;
+  const { setSelectedItem, triggerImageTransition } = props;
+  const { title, description, price } = props.item;
   const classes = menuCategoryStyles();
 
   useEffect(() => {
@@ -11,7 +13,13 @@ export const MenuCategoryItem: React.FC<any> = props => {
   });
 
   return (
-    <div className={classes.itemWrapper} onClick={onClickCallback}>
+    <div
+      className={classes.itemWrapper}
+      onClick={() => {
+        setSelectedItem(props.item);
+        triggerImageTransition();
+      }}
+    >
       <Grid
         container
         justify={"space-between"}
@@ -27,25 +35,4 @@ export const MenuCategoryItem: React.FC<any> = props => {
       </Grid>
     </div>
   );
-};
-
-export const MenuCategory: React.FC<any> = props => {
-  const { items, setSelectedItem } = props;
-  const classes = menuCategoryStyles();
-
-  useEffect(() => {
-    console.log("RENDERED: Menu Category");
-  });
-
-  const itemsComp = useMemo(() => {
-    return items.map((item: any, idx: number) => (
-      <MenuCategoryItem
-        {...item}
-        key={idx}
-        onClickCallback={() => setSelectedItem(item)}
-      />
-    ));
-  }, [items]);
-
-  return <div className={classes.subWrapper}>{itemsComp}</div>;
 };

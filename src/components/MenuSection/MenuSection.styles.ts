@@ -10,8 +10,10 @@ export const menuSectionStyles = () => {
       },
     },
     title: {
-      color: "white",
       textAlign: "center",
+    },
+    subtitle: {
+      fontSize: 15
     },
     menuGridWrapper: {
       marginTop: 50,

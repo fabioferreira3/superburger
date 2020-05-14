@@ -16,5 +16,11 @@ export const aboutStyles = () => {
       padding: "40px",
       background: theme.palette.primary.main,
     },
+    socialWrapper: {
+      marginTop: 30,
+    },
+    socialIcon: {
+      color: theme.palette.text.primary,
+    },
   }))();
 };

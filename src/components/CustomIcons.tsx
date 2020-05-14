@@ -20,35 +20,35 @@ const CustomIcon: React.FC<any> = props => (
   </SvgIcon>
 );
 
-export const BaguetteIcon: React.FC = props => (
+export const BaguetteIcon: React.FC<any> = props => (
   <CustomIcon svg={baguette} {...props} />
 );
-export const BreadIcon: React.FC = props => (
+export const BreadIcon: React.FC<any> = props => (
   <CustomIcon svg={bread} {...props} />
 );
-export const BurgerIcon: React.FC = props => (
+export const BurgerIcon: React.FC<any> = props => (
   <CustomIcon svg={burger} {...props} />
 );
-export const BurgerMealIcon: React.FC = props => (
+export const BurgerMealIcon: React.FC<any> = props => (
   <CustomIcon svg={burgerMeal} {...props} />
 );
-export const ChefHatIcon: React.FC = props => (
+export const ChefHatIcon: React.FC<any> = props => (
   <CustomIcon svg={chefHat} {...props} />
 );
-export const DoughnutIcon: React.FC = props => (
+export const DoughnutIcon: React.FC<any> = props => (
   <CustomIcon svg={doughnut} {...props} />
 );
-export const FoodBoxIcon: React.FC = props => (
+export const FoodBoxIcon: React.FC<any> = props => (
   <CustomIcon svg={foodBox} {...props} />
 );
-export const FriesIcon: React.FC = props => (
+export const FriesIcon: React.FC<any> = props => (
   <CustomIcon svg={fries} {...props} />
 );
-export const HamburgerIcon: React.FC = props => (
+export const HamburgerIcon: React.FC<any> = props => (
   <CustomIcon svg={hamburger} {...props} />
 );
-export const MealIcon: React.FC = props => <CustomIcon svg={meal} {...props} />;
-export const MeatIcon: React.FC = props => <CustomIcon svg={beef} {...props} />;
-export const SoftdrinkIcon: React.FC = props => (
+export const MealIcon: React.FC<any> = props => <CustomIcon svg={meal} {...props} />;
+export const MeatIcon: React.FC<any> = props => <CustomIcon svg={beef} {...props} />;
+export const SoftdrinkIcon: React.FC<any> = props => (
   <CustomIcon svg={softDrink} {...props} />
 );
