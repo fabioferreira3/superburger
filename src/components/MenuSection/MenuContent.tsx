@@ -61,9 +61,34 @@ export const MenuContent: React.FC<any> = props => {
             </Typography>
             <Fade in={trigger} timeout={800}>
               <Img
-                fluid={
-                  imagesMapping[selectedItem.imageId].childImageSharp.fluid
-                }
+                fluid={[
+                  imagesMapping[selectedItem.imageId].childImageSharp.fluid,
+                  {
+                    ...imagesMapping[`${selectedItem.imageId}_s2`]
+                      .childImageSharp.fluid,
+                    media: `(max-width:1920px) and (min-width:1600px)`,
+                  },
+                  {
+                    ...imagesMapping[`${selectedItem.imageId}_s3`]
+                      .childImageSharp.fluid,
+                    media: `(max-width:1599px) and (min-width:1366px)`,
+                  },
+                  {
+                    ...imagesMapping[`${selectedItem.imageId}_s4`]
+                      .childImageSharp.fluid,
+                    media: `(max-width:1365px) and (min-width:1024px)`,
+                  },
+                  {
+                    ...imagesMapping[`${selectedItem.imageId}_s5`]
+                      .childImageSharp.fluid,
+                    media: `(max-width:1023px) and (min-width:768px)`,
+                  },
+                  {
+                    ...imagesMapping[`${selectedItem.imageId}_s6`]
+                      .childImageSharp.fluid,
+                    media: `(max-width:767px)`,
+                  },
+                ]}
                 style={{ height: "100%" }}
               />
             </Fade>

@@ -27,7 +27,7 @@ const BackgroundSection: React.FC<any> = props => {
         query {
           desktop: file(relativePath: { eq: "main-banner.jpg" }) {
             childImageSharp {
-              fluid(maxWidth: 3000) {
+              fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
               }
             }

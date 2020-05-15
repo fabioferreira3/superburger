@@ -23,7 +23,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
-          families: ["OriginalBurger"],
+          families: ["CheddarGothicRough"],
           urls: ["/fonts/fonts.css"],
         },
       },

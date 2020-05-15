@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'OriginalBurger';
-    font-weight: normal;
-    font-style: normal;
-    src: url('./OriginalBurger-Regular.otf');
-    font-display: swap;
-}
-@font-face {
     font-family: 'CheddarGothicRough';
     font-weight: normal;
     font-style: normal;
