@@ -42,6 +42,15 @@ const SuperburgerTheme = (preference: PreferenceT) => {
         letterSpacing: "1px",
       },
     },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': {
+            fontDisplay: "swap",
+          },
+        },
+      },
+    },
   });
 };
 

@@ -26,7 +26,12 @@ const Image = () => {
     }
   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} style={{opacity: "0.3"}}/>;
+  return (
+    <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      style={{ opacity: "0.3" }}
+    />
+  );
 };
 
 export default Image;

@@ -17,10 +17,11 @@ const StyledButton = withStyles(theme => ({
     marginRight: 10,
     letterSpacing: 1,
     "&:hover": {
+      background: "#c62f09",
       color: theme.palette.text.primary,
     },
-    background: theme.palette.secondary.main,
-    color: theme.palette.text.secondary,
+    background: "#ed3709",
+    color: theme.palette.text.primary,
   },
 }))(Button);
 
@@ -37,13 +38,22 @@ export const PromoItem: React.FC<any> = props => {
             <Typography color={"textPrimary"} className={classes.itemSubtitle}>
               {subtitle}
             </Typography>
-            <Typography color={"textPrimary"} className={classes.itemTitle}>
+            <Typography
+              color={"textPrimary"}
+              className={classes.itemTitle}
+              onClick={onClickCallback}
+            >
               {title}
             </Typography>
           </CardContent>
           <CardActions className={classes.cardContent}>
             <StyledButton
-              endIcon={<DoubleArrowIcon style={{ fontSize: 20 }} />}
+              endIcon={
+                <DoubleArrowIcon
+                  style={{ fontSize: 20 }}
+                  onClick={onClickCallback}
+                />
+              }
             >
               {buttonText}
             </StyledButton>

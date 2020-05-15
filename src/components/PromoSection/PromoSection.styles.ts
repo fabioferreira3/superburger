@@ -27,6 +27,7 @@ export const promoSectionStyles = () => {
       fontFamily: theme.typography.fontFamily,
       fontWeight: 100,
       fontSize: 30,
+      marginTop: 5,
     },
     itemSubtitle: {
       fontSize: 15,

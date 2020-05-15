@@ -1,10 +1,12 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import { promoSectionStyles } from "./PromoSection.styles";
 import { SectionTitle } from "../SectionTitle";
 import { PromoItem } from "./PromoItem";
-import Image from "../image";
+import { PromoImage1 } from "./PromoImage1";
+import { PromoImage2 } from "./PromoImage2";
+import { PromoImage3 } from "./PromoImage3";
 
 export const PromoSection: React.FC = () => {
   const classes = promoSectionStyles();
@@ -28,7 +30,7 @@ export const PromoSection: React.FC = () => {
           }
           subtitle={"Every day"}
           buttonText={"Read More"}
-          img={Image}
+          img={PromoImage1}
         />
         <PromoItem
           title={
@@ -36,7 +38,7 @@ export const PromoSection: React.FC = () => {
           }
           subtitle={"Loyalty Program"}
           buttonText={"Sign in"}
-          img={Image}
+          img={PromoImage2}
         />
         <PromoItem
           title={
@@ -44,7 +46,7 @@ export const PromoSection: React.FC = () => {
           }
           subtitle={"Loyalty Program"}
           buttonText={"Sign in"}
-          img={Image}
+          img={PromoImage3}
         />
       </Grid>
     </Grid>
