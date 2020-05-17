@@ -38,7 +38,7 @@ export const generateImageSources = (
   });
 
   if (!groupImages) {
-    return sources;
+    return _.toArray(sources);
   }
 
   _.forEach(groupKeys, (keyName: any) => {

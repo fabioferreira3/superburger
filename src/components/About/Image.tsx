@@ -27,5 +27,5 @@ export const getAboutImage = () => {
     }
   `);
 
-  return _.toArray(generateImageSources(data));
+  return generateImageSources(data);
 };

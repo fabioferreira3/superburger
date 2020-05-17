@@ -27,5 +27,5 @@ export const getBannerImage = () => {
     }
   `);
 
-  return _.toArray(generateImageSources(data));
+  return generateImageSources(data);
 };
