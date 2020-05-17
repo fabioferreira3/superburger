@@ -1,11 +1,12 @@
 import React from "react";
-import classnames from "classnames";
-
-import BackgroundSection from "../BackgroundSection";
-import Logo from "../Logo";
-import { bannerSectionStyles } from "./BannerSection.styles";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import classnames from "classnames";
+
+import BackgroundSection from "../BackgroundSection/BackgroundSection";
+import Logo from "../Logo";
+import { bannerSectionStyles } from "./BannerSection.styles";
+import { getBannerImage } from "./Image";
 
 export const StyledButton = withStyles(theme => ({
   root: {
@@ -39,8 +40,9 @@ export const StyledButton = withStyles(theme => ({
 
 export const BannerSection: React.FC = () => {
   const classes = bannerSectionStyles();
+  const bannerImage = getBannerImage();
   return (
-    <BackgroundSection>
+    <BackgroundSection imageSource={bannerImage}>
       <div className={classes.box}>
         <Logo />
       </div>

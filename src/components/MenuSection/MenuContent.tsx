@@ -5,27 +5,17 @@ import Img from "gatsby-image";
 import { MenuCategoryItem } from "./MenuCategoryItem";
 import { menuCategoryStyles } from "./MenuCategory.styles";
 import { menuItemsData } from "./categoriesData";
-import { generateImageSources } from "../../helpers/generateImageSources";
 
 export const MenuContent: React.FC<any> = props => {
-  const { category, imagesMapping } = props;
+  const { category, imageSources } = props;
   const classes = menuCategoryStyles();
   const items = menuItemsData[category];
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const [trigger, setTrigger] = useState(true);
 
-  const imageSources = generateImageSources(imagesMapping);
-  console.log(imageSources);
-
-  useEffect(() => {
-    console.log(selectedItem, "selItem");
-  }, [selectedItem]);
-
   const triggerImageTransition = () => {
     setTrigger(false);
   };
-
-  const imagesList = () => {};
 
   const itemsComp = useMemo(() => {
     return items.map((item: any, idx: number) => (
@@ -68,8 +58,12 @@ export const MenuContent: React.FC<any> = props => {
             <Typography variant={"h3"} className={classes.itemImageLabel}>
               {selectedItem.title}
             </Typography>
+
             <Fade in={trigger} timeout={800}>
-              <Img fluid={imageSources} style={{ height: "100%" }} />
+              <Img
+                fluid={imageSources[selectedItem.imageId]}
+                style={{ height: "100%" }}
+              />
             </Fade>
           </>
         )}

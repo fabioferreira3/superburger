@@ -36,7 +36,7 @@ export const MenuGrid: React.FC = () => {
       </Grid>
       <Grid container className={classes.menuGridContent}>
         <MenuContent
-          imagesMapping={menuItemsImages}
+          imageSources={menuItemsImages}
           category={activeCategory}
         />
       </Grid>
