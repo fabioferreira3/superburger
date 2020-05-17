@@ -19,7 +19,7 @@ const SuperburgerTheme = (preference: PreferenceT) => {
       tonalOffset: 0.2,
     },
     typography: {
-      fontFamily: "CheddarGothicRough",
+      fontFamily: "Fira Sans",
       fontWeightLight: 300,
       fontWeightMedium: 400,
       fontWeightBold: 700,
@@ -31,21 +31,32 @@ const SuperburgerTheme = (preference: PreferenceT) => {
       },
       h2: {
         fontSize: 50,
+        fontWeight: 700,
+        letterSpacing: "1px",
+      },
+      h3: {
+        fontSize: 35,
+        fontWeight: 700,
         letterSpacing: "1px",
       },
       body1: {
-        fontFamily: "Fira Sans",
         fontWeight: 700,
         fontSize: 20,
       },
+      body2: {
+        fontSize: 15,
+        fontWeight: 500,
+      },
       button: {
-        letterSpacing: "1px",
+        letterSpacing: 1,
+        fontWeight: 700,
+        fontSize: 18,
       },
     },
     overrides: {
       MuiCssBaseline: {
-        '@global': {
-          '@font-face': {
+        "@global": {
+          "@font-face": {
             fontDisplay: "swap",
           },
         },

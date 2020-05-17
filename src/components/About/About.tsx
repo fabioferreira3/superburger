@@ -26,7 +26,7 @@ export const About: React.FC = () => {
         item
         xs={12}
         md={4}
-        justify={"space-between"}
+        justify={"center"}
         direction={"column"}
         className={classes.contentWrapper}
       >

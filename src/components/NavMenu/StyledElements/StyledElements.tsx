@@ -23,7 +23,6 @@ export const StyledListItemIcon = withStyles(theme => ({
 
 export const StyledButton = withStyles(theme => ({
   root: {
-    fontSize: "1.5em",
     width: "100%",
     background: "none",
     "&:hover": {

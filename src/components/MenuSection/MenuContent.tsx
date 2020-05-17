@@ -55,7 +55,7 @@ export const MenuContent: React.FC<any> = props => {
       >
         {selectedItem && (
           <>
-            <Typography variant={"h3"} className={classes.itemImageLabel}>
+            <Typography variant={"h3"} component={"span"} className={classes.itemImageLabel}>
               {selectedItem.title}
             </Typography>
 

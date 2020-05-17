@@ -35,7 +35,9 @@ const StatItem: React.FC<StatProps> = ({
     >
       <Grid container alignItems={"center"} justify={"space-around"}>
         <Icon className={classes.statItemIcon} />
-        <span className={classes.statItemNumber}>{statNumber}</span>
+        <Typography variant={"h2"} component={"span"} className={classes.statItemNumber}>
+          {statNumber}
+        </Typography>
       </Grid>
       <Typography
         variant={"body1"}

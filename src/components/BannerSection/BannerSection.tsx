@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import classnames from "classnames";
 
 import BackgroundSection from "../BackgroundSection/BackgroundSection";
@@ -10,11 +10,9 @@ import { getBannerImage } from "./Image";
 
 export const StyledButton = withStyles(theme => ({
   root: {
-    fontSize: "1.5em",
     width: 150,
     padding: 10,
     marginRight: 10,
-    letterSpacing: 1,
     "&:hover": {
       color: theme.palette.text.primary,
     },

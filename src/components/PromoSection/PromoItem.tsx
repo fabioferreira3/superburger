@@ -11,11 +11,9 @@ import CardContent from "@material-ui/core/CardContent";
 
 const StyledButton = withStyles(theme => ({
   root: {
-    fontSize: "1.5em",
     width: 150,
     padding: 10,
     marginRight: 10,
-    letterSpacing: 1,
     "&:hover": {
       background: "#c62f09",
       color: theme.palette.text.primary,
@@ -35,10 +33,15 @@ export const PromoItem: React.FC<any> = props => {
         <CardActionArea>
           <Img />
           <CardContent className={classes.cardContent}>
-            <Typography color={"textPrimary"} className={classes.itemSubtitle}>
+            <Typography
+              variant={"body2"}
+              color={"textPrimary"}
+              className={classes.itemSubtitle}
+            >
               {subtitle}
             </Typography>
             <Typography
+              variant={"body1"}
               color={"textPrimary"}
               className={classes.itemTitle}
               onClick={onClickCallback}

@@ -1,7 +1,8 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import { generateImageSources } from "../helpers/generateImageSources"
+
+import { generateImageSources } from "../helpers/generateImageSources";
 
 const Logo = () => {
   const data = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ const Logo = () => {
     }
   `);
 
-  const imageSources = generateImageSources(data)
+  const imageSources = generateImageSources(data);
 
   return <Img fluid={imageSources} />;
 };

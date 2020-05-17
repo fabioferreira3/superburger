@@ -25,13 +25,12 @@ export const promoSectionStyles = () => {
     },
     itemTitle: {
       fontFamily: theme.typography.fontFamily,
-      fontWeight: 100,
-      fontSize: 30,
+      fontSize: 25,
       marginTop: 5,
     },
     itemSubtitle: {
-      fontSize: 15,
       textTransform: "uppercase",
+      fontWeight: 500,
     },
   }))();
 };

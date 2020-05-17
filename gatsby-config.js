@@ -20,15 +20,6 @@ module.exports = {
       options: { stylesProvider: { injectFirst: true } },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["CheddarGothicRough"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
@@ -36,6 +27,15 @@ module.exports = {
             {
               family: "Fira Sans",
               variants: ["300", "400", "500"],
+            },
+            {
+              family: "Neucha",
+            },
+            {
+              family: "Carter One",
+            },
+            {
+              family: "Viga",
             },
           ],
         },

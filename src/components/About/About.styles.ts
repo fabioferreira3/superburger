@@ -9,7 +9,7 @@ export const aboutStyles = () => {
     mainImage: {
       height: "100%",
       [theme.breakpoints.up("md")]: {
-        maxHeight: "80%",
+        maxHeight: "90%",
       },
     },
     contentWrapper: {
