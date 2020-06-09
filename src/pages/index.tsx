@@ -9,7 +9,9 @@ import { StatsSection } from "../components/StatsSection/StatsSection";
 import { MenuSection } from "../components/MenuSection/MenuSection";
 
 import "../components/layout.css";
-import { PromoSection } from "../components/PromoSection/PromoSection"
+import { PromoSection } from "../components/PromoSection/PromoSection";
+import { Footer } from "../components/Footer/Footer";
+import { ContactForm } from "../components/ContactForm/ContactForm";
 
 const IndexPage = () => {
   return (
@@ -21,6 +23,8 @@ const IndexPage = () => {
         <StatsSection />
         <MenuSection />
         <PromoSection />
+        <ContactForm />
+        <Footer />
       </PageLayout>
     </App>
   );

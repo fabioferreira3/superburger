@@ -15,10 +15,10 @@ const StyledButton = withStyles(theme => ({
     padding: 10,
     marginRight: 10,
     "&:hover": {
-      background: "#c62f09",
+      background: theme.palette.info.dark,
       color: theme.palette.text.primary,
     },
-    background: "#ed3709",
+    background: theme.palette.info.main,
     color: theme.palette.text.primary,
   },
 }))(Button);
@@ -30,38 +30,36 @@ export const PromoItem: React.FC<any> = props => {
   return (
     <Grid item xs={12} sm={4} md={3} className={classes.itemWrapper}>
       <Card className={classes.cardWrapper}>
-        <CardActionArea>
-          <Img />
-          <CardContent className={classes.cardContent}>
-            <Typography
-              variant={"body2"}
-              color={"textPrimary"}
-              className={classes.itemSubtitle}
-            >
-              {subtitle}
-            </Typography>
-            <Typography
-              variant={"body1"}
-              color={"textPrimary"}
-              className={classes.itemTitle}
-              onClick={onClickCallback}
-            >
-              {title}
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.cardContent}>
-            <StyledButton
-              endIcon={
-                <DoubleArrowIcon
-                  style={{ fontSize: 20 }}
-                  onClick={onClickCallback}
-                />
-              }
-            >
-              {buttonText}
-            </StyledButton>
-          </CardActions>
-        </CardActionArea>
+        <Img />
+        <CardContent className={classes.cardContent}>
+          <Typography
+            variant={"body2"}
+            color={"textPrimary"}
+            className={classes.itemSubtitle}
+          >
+            {subtitle}
+          </Typography>
+          <Typography
+            variant={"body1"}
+            color={"textPrimary"}
+            className={classes.itemTitle}
+            onClick={onClickCallback}
+          >
+            {title}
+          </Typography>
+        </CardContent>
+        <CardActions className={classes.cardContent}>
+          <StyledButton
+            endIcon={
+              <DoubleArrowIcon
+                style={{ fontSize: 20 }}
+                onClick={onClickCallback}
+              />
+            }
+          >
+            {buttonText}
+          </StyledButton>
+        </CardActions>
       </Card>
     </Grid>
   );

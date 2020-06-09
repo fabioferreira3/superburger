@@ -11,6 +11,8 @@
     "@types/classnames": "^2.2.10",
     "@types/lodash": "^4.14.151",
     "@types/react-helmet": "^6.0.0",
+    "@types/react-input-mask": "^2.0.5",
+    "@types/react-text-mask": "^5.4.6",
     "@types/shortid": "0.0.29",
     "@types/styled-components": "^5.1.0",
     "@types/webfontloader": "^1.6.29",
@@ -35,6 +37,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-input-mask": "^2.0.4",
+    "react-text-mask": "^5.4.3",
     "shortid": "^2.2.15",
     "styled-components": "^5.1.0",
     "typescript": "^3.9.2"

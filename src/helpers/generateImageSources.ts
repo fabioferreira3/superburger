@@ -51,6 +51,7 @@ export const generateImageSources = (
         }, {})
     );
   });
+  console.log(newSources);
 
   return newSources;
 };

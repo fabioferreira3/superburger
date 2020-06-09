@@ -37,9 +37,4 @@ export default [
     slug: "contact",
     onClickEvent: () => navigate("/"),
   },
-  {
-    title: "Reservations",
-    slug: "reservations",
-    onClickEvent: () => navigate("/"),
-  },
 ];

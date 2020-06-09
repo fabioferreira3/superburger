@@ -12,6 +12,10 @@ const SuperburgerTheme = (preference: PreferenceT) => {
       secondary: {
         main: "#ffc700",
       },
+      info: {
+        main: "#ed3709",
+        dark: "#c62f09",
+      },
       text: {
         primary: "#fff",
         secondary: "#2b2b2b",
@@ -39,6 +43,11 @@ const SuperburgerTheme = (preference: PreferenceT) => {
         fontWeight: 700,
         letterSpacing: "1px",
       },
+      h4: {
+        fontSize: 25,
+        fontWeight: 700,
+        letterSpacing: "1px",
+      },
       body1: {
         fontWeight: 700,
         fontSize: 20,
@@ -58,6 +67,13 @@ const SuperburgerTheme = (preference: PreferenceT) => {
         "@global": {
           "@font-face": {
             fontDisplay: "swap",
+          },
+          input: {
+            color: "#2b2b2b !important",
+          },
+          textArea: {
+            color: "#2b2b2b !important",
+            padding: "20px !important",
           },
         },
       },
