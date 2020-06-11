@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import classnames from "classnames";
 
 import BackgroundSection from "../BackgroundSection/BackgroundSection";
@@ -40,7 +40,7 @@ export const BannerSection: React.FC = () => {
   const classes = bannerSectionStyles();
   const bannerImage = getBannerImage();
   return (
-    <BackgroundSection imageSource={bannerImage}>
+    <BackgroundSection imageSource={bannerImage.banner_.childImageSharp.fluid}>
       <div className={classes.box}>
         <Logo />
       </div>

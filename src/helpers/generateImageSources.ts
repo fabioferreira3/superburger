@@ -37,6 +37,8 @@ export const generateImageSources = (
     };
   });
 
+  return sources;
+
   if (!groupImages) {
     return _.toArray(sources);
   }
@@ -51,7 +53,6 @@ export const generateImageSources = (
         }, {})
     );
   });
-  console.log(newSources);
 
   return newSources;
 };

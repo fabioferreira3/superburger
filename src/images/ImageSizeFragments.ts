@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 export const fluidHdImage = graphql`
   fragment fluidHdImage on File {
     childImageSharp {
-      fluid(maxWidth: 2000, quality: 60) {
+      fluid(maxWidth: 1600, quality: 60) {
         ...GatsbyImageSharpFluid
       }
     }

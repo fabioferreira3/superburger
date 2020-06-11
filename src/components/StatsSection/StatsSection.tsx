@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CountUp from "react-countup";
 import { Grid, Typography } from "@material-ui/core";
 
 import { statsSectionStyles } from "./StatsSection.styles";
@@ -10,12 +11,14 @@ import {
 } from "../CustomIcons";
 
 interface StatProps {
-  statNumber: string;
+  statNumber: number;
+  suffix?: string;
   icon: any;
 }
 
 const StatItem: React.FC<StatProps> = ({
   statNumber,
+  suffix = "",
   icon: Icon,
   children,
 }) => {
@@ -35,8 +38,12 @@ const StatItem: React.FC<StatProps> = ({
     >
       <Grid container alignItems={"center"} justify={"space-around"}>
         <Icon className={classes.statItemIcon} />
-        <Typography variant={"h2"} component={"span"} className={classes.statItemNumber}>
-          {statNumber}
+        <Typography
+          variant={"h2"}
+          component={"span"}
+          className={classes.statItemNumber}
+        >
+          <CountUp end={statNumber} suffix={suffix} duration={10} />
         </Typography>
       </Grid>
       <Typography
@@ -62,22 +69,22 @@ export const StatsSection: React.FC = () => {
       <Grid item xs={12} md={10} className={classes.wrapper}>
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <StatItem statNumber={"24H"} icon={BaguetteIcon}>
+            <StatItem statNumber={24} suffix={"H"} icon={BaguetteIcon}>
               Every day, supplied with fresh products
             </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <StatItem statNumber={"98Kg"} icon={MeatIcon}>
+            <StatItem statNumber={98} suffix={"Kg"} icon={MeatIcon}>
               Our guests eat fresh meat every month
             </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <StatItem statNumber={"3542"} icon={SoftdrinkIcon}>
+            <StatItem statNumber={3542} icon={SoftdrinkIcon}>
               Beverages served to our guests every month
             </StatItem>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <StatItem statNumber={"2"} icon={ChefHatIcon}>
+            <StatItem statNumber={2} icon={ChefHatIcon}>
               Current owners are the second generation
             </StatItem>
           </Grid>

@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 import Seo from "../components/Seo";
 import { App } from "../components/App";
@@ -19,12 +20,14 @@ const IndexPage = () => {
       <PageLayout>
         <Seo title="Home" />
         <BannerSection />
-        <About />
-        <StatsSection />
-        <MenuSection />
-        <PromoSection />
-        <ContactForm />
-        <Footer />
+        {/*<About />*/}
+        {/*<LazyLoad offset={100}>*/}
+        {/*  <StatsSection />*/}
+        {/*</LazyLoad>*/}
+        {/*<MenuSection />*/}
+        {/*<PromoSection />*/}
+        {/*<ContactForm />*/}
+        {/*<Footer />*/}
       </PageLayout>
     </App>
   );

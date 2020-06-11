@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Fade, Grid, Typography } from "@material-ui/core";
 import Img from "gatsby-image";
+import LazyLoad from "react-lazyload";
 
 import { MenuCategoryItem } from "./MenuCategoryItem";
 import { menuCategoryStyles } from "./MenuCategory.styles";
@@ -55,15 +56,21 @@ export const MenuContent: React.FC<any> = props => {
       >
         {selectedItem && (
           <>
-            <Typography variant={"h3"} component={"span"} className={classes.itemImageLabel}>
+            <Typography
+              variant={"h3"}
+              component={"span"}
+              className={classes.itemImageLabel}
+            >
               {selectedItem.title}
             </Typography>
 
             <Fade in={trigger} timeout={800}>
-              <Img
-                fluid={imageSources[selectedItem.imageId]}
-                style={{ height: "100%" }}
-              />
+              <LazyLoad offset={100}>
+                <Img
+                  fluid={imageSources[selectedItem.imageId]}
+                  style={{ height: "100%" }}
+                />
+              </LazyLoad>
             </Fade>
           </>
         )}
