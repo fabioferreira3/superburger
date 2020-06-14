@@ -8,10 +8,6 @@ export const MenuCategoryItem: React.FC<any> = props => {
   const { title, description, price } = props.item;
   const classes = menuCategoryStyles();
 
-  useEffect(() => {
-    console.log("RENDERED:  Menu Category Item");
-  });
-
   return (
     <div
       className={classes.itemWrapper}

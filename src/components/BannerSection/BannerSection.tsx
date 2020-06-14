@@ -39,6 +39,7 @@ export const StyledButton = withStyles(theme => ({
 export const BannerSection: React.FC = () => {
   const classes = bannerSectionStyles();
   const bannerImage = getBannerImage();
+
   return (
     <BackgroundSection imageSource={bannerImage.banner_.childImageSharp.fluid}>
       <div className={classes.box}>

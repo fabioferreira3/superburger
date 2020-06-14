@@ -26,16 +26,7 @@ module.exports = {
           google: [
             {
               family: "Fira Sans",
-              variants: ["300", "400", "500"],
-            },
-            {
-              family: "Neucha",
-            },
-            {
-              family: "Carter One",
-            },
-            {
-              family: "Viga",
+              variants: ["700"],
             },
           ],
         },
@@ -52,12 +43,12 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        //  icon: ``, // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

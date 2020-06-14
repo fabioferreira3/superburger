@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Img from "gatsby-image";
+import LazyLoad from "react-lazyload";
 
 import { aboutStyles } from "./About.styles";
 import { getAboutImage } from "./Image";
@@ -12,14 +13,15 @@ export const About: React.FC = () => {
   const classes = aboutStyles();
   const imageSource = getAboutImage();
 
-  useEffect(() => {
-    console.log("RENDERED: About section");
-  });
-
   return (
     <Grid container className={classes.wrapper}>
       <Grid item xs={12} md={8}>
-        <Img fluid={imageSource} className={classes.mainImage} />
+        <LazyLoad>
+          <Img
+            fluid={imageSource.aboutus_.childImageSharp.fluid}
+            className={classes.mainImage}
+          />
+        </LazyLoad>
       </Grid>
       <Grid
         container

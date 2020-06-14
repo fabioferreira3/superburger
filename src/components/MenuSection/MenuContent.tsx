@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fade, Grid, Typography } from "@material-ui/core";
 import Img from "gatsby-image";
 import LazyLoad from "react-lazyload";
@@ -18,16 +18,14 @@ export const MenuContent: React.FC<any> = props => {
     setTrigger(false);
   };
 
-  const itemsComp = useMemo(() => {
-    return items.map((item: any, idx: number) => (
-      <MenuCategoryItem
-        key={idx}
-        item={item}
-        setSelectedItem={setSelectedItem}
-        triggerImageTransition={triggerImageTransition}
-      />
-    ));
-  }, [items]);
+  const itemsComp = items.map((item: any, idx: number) => (
+    <MenuCategoryItem
+      key={idx}
+      item={item}
+      setSelectedItem={setSelectedItem}
+      triggerImageTransition={triggerImageTransition}
+    />
+  ));
 
   useEffect(() => {
     if (category) {
@@ -41,10 +39,6 @@ export const MenuContent: React.FC<any> = props => {
       setTrigger(true);
     }
   }, [trigger]);
-
-  useEffect(() => {
-    console.log("RENDERED: Menu Content");
-  });
 
   return (
     <>
@@ -65,7 +59,7 @@ export const MenuContent: React.FC<any> = props => {
             </Typography>
 
             <Fade in={trigger} timeout={800}>
-              <LazyLoad offset={100}>
+              <LazyLoad>
                 <Img
                   fluid={imageSources[selectedItem.imageId]}
                   style={{ height: "100%" }}

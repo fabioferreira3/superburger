@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CountUp from "react-countup";
 import { Grid, Typography } from "@material-ui/core";
 
@@ -9,6 +9,7 @@ import {
   MeatIcon,
   SoftdrinkIcon,
 } from "../CustomIcons";
+import LazyLoad from "react-lazyload";
 
 interface StatProps {
   statNumber: number;
@@ -24,10 +25,6 @@ const StatItem: React.FC<StatProps> = ({
 }) => {
   const classes = statsSectionStyles();
 
-  useEffect(() => {
-    console.log("RENDERED: Stat item");
-  });
-
   return (
     <Grid
       container
@@ -37,14 +34,16 @@ const StatItem: React.FC<StatProps> = ({
       className={classes.statItem}
     >
       <Grid container alignItems={"center"} justify={"space-around"}>
-        <Icon className={classes.statItemIcon} />
-        <Typography
-          variant={"h2"}
-          component={"span"}
-          className={classes.statItemNumber}
-        >
-          <CountUp end={statNumber} suffix={suffix} duration={10} />
-        </Typography>
+        <LazyLoad offset={100}>
+          <Icon className={classes.statItemIcon} />
+          <Typography
+            variant={"h2"}
+            component={"span"}
+            className={classes.statItemNumber}
+          >
+            <CountUp end={statNumber} suffix={suffix} duration={10} />
+          </Typography>
+        </LazyLoad>
       </Grid>
       <Typography
         variant={"body1"}
@@ -59,10 +58,6 @@ const StatItem: React.FC<StatProps> = ({
 
 export const StatsSection: React.FC = () => {
   const classes = statsSectionStyles();
-
-  useEffect(() => {
-    console.log("RENDERED: Stats section");
-  });
 
   return (
     <Grid container className={classes.mainWrapper}>

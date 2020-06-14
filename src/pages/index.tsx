@@ -1,5 +1,4 @@
 import React from "react";
-import LazyLoad from "react-lazyload";
 
 import Seo from "../components/Seo";
 import { App } from "../components/App";
@@ -13,21 +12,27 @@ import "../components/layout.css";
 import { PromoSection } from "../components/PromoSection/PromoSection";
 import { Footer } from "../components/Footer/Footer";
 import { ContactForm } from "../components/ContactForm/ContactForm";
+import { Hidden } from "@material-ui/core";
+import LazyLoad from "react-lazyload";
 
 const IndexPage = () => {
   return (
     <App>
       <PageLayout>
         <Seo title="Home" />
-        <BannerSection />
-        {/*<About />*/}
-        {/*<LazyLoad offset={100}>*/}
-        {/*  <StatsSection />*/}
-        {/*</LazyLoad>*/}
-        {/*<MenuSection />*/}
-        {/*<PromoSection />*/}
-        {/*<ContactForm />*/}
-        {/*<Footer />*/}
+        <Hidden xsDown>
+          <BannerSection />
+        </Hidden>
+        <About />
+        <Hidden xsDown>
+          <StatsSection />
+        </Hidden>
+        <MenuSection />
+        <PromoSection />
+        <LazyLoad>
+          <ContactForm />
+        </LazyLoad>
+        <Footer />
       </PageLayout>
     </App>
   );

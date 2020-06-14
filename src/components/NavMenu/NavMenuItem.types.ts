@@ -1,12 +1,16 @@
-export type NavMenuItemSubItemType = {
+export interface INavMenuItemSubItem {
   title: string;
   icon?: JSX.Element;
   onClickEvent: Function;
-};
+}
 
-export interface INavMenuItemProps {
+export interface INavMenuItem {
   title: string;
   slug: string;
-  items?: NavMenuItemSubItemType[];
-  onClickEvent?: Function;
+  items?: INavMenuItemSubItem[];
+  onClickEvent: () => void;
+}
+
+export interface INavMenuItemProps {
+  items: INavMenuItem[];
 }

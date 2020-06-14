@@ -5,9 +5,9 @@ import { promoSectionStyles } from "./PromoSection.styles";
 import { withStyles } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import LazyLoad from "react-lazyload";
 
 const StyledButton = withStyles(theme => ({
   root: {
@@ -30,7 +30,9 @@ export const PromoItem: React.FC<any> = props => {
   return (
     <Grid item xs={12} sm={4} md={3} className={classes.itemWrapper}>
       <Card className={classes.cardWrapper}>
-        <Img />
+        <LazyLoad offset={100}>
+          <Img />
+        </LazyLoad>
         <CardContent className={classes.cardContent}>
           <Typography
             variant={"body2"}

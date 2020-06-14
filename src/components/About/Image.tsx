@@ -1,7 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-import _ from "lodash";
-
-import { generateImageSources } from "../../helpers/generateImageSources";
 
 export const getAboutImage = () => {
   const data = useStaticQuery(graphql`
@@ -12,5 +9,5 @@ export const getAboutImage = () => {
     }
   `);
 
-  return generateImageSources(data);
+  return data;
 };

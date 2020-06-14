@@ -13,6 +13,7 @@ import classnames from "classnames";
 import { FormData } from "./FormData";
 import { contactFormStyles } from "./ContactForm.styles";
 import { SectionTitle } from "../SectionTitle";
+import LazyLoad from "react-lazyload";
 
 export const ContactForm: React.FC = () => {
   const classes = contactFormStyles();
@@ -26,7 +27,6 @@ export const ContactForm: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Form submit logic here
-    // console.log(formData);
   };
 
   return (

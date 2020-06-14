@@ -9,9 +9,9 @@ import {
   StyledMenuItem,
 } from "./StyledElements/StyledElements";
 import { navMenuItemStyles } from "./NavMenuItem.styles";
-import { INavMenuItemProps, NavMenuItemSubItemType } from "./NavMenuItem.types";
+import { INavMenuItem, INavMenuItemSubItem } from "./NavMenuItem.types";
 
-const NavMenuSubItem: React.FC<NavMenuItemSubItemType> = props => {
+const NavMenuSubItem: React.FC<INavMenuItemSubItem> = props => {
   const { title, icon, onClickEvent } = props;
   return (
     <StyledMenuItem onClick={() => onClickEvent()}>
@@ -21,7 +21,7 @@ const NavMenuSubItem: React.FC<NavMenuItemSubItemType> = props => {
   );
 };
 
-export const NavMenuItem: React.FC<INavMenuItemProps> = props => {
+export const NavMenuItem: React.FC<INavMenuItem> = props => {
   const { title, items, onClickEvent, slug } = props;
   const { activeMenu, setActiveMenu } = useContext<any>(NavMenuContext);
   const classes = navMenuItemStyles();
@@ -29,7 +29,7 @@ export const NavMenuItem: React.FC<INavMenuItemProps> = props => {
   const submenuIsOpen: boolean = activeMenu === slug;
 
   return (
-    <div className={classes.menuItem} onMouseOver={() => setActiveMenu(slug)}>
+    <a className={classes.menuItem} onMouseOver={() => setActiveMenu(slug)}>
       <StyledButton
         variant="contained"
         color="primary"
@@ -52,6 +52,6 @@ export const NavMenuItem: React.FC<INavMenuItemProps> = props => {
             items.map((item, idx) => <NavMenuSubItem key={idx} {...item} />)}
         </div>
       </Fade>
-    </div>
+    </a>
   );
 };
